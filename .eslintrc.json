@@ -1,0 +1,22 @@
+{
+    "extends": "vue",
+    "rules": {
+        "indent": ["error", 2],
+        "linebreak-style": "off",
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "comma-dangle": "off",
+        "no-console": "off",
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        // "no-return-assign": "off",
+        // "no-undef": "off",
+        "space-before-function-paren": ["error", "never"],
+        "padded-blocks": "off"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ]
+}

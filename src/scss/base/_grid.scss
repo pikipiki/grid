@@ -1,0 +1,53 @@
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1000px;
+}
+
+.row::before,
+.row::after {
+  display:table;
+  content: " ";
+  clear: both;
+}
+
+.one,
+.one-third,
+.one-fourth,
+.one-fifth,
+.two-thirds,
+.three-fourth,
+.four-fifth,
+.half {
+  width: 100%;
+}
+
+@media screen and (min-width: $breakpoint) {
+  .one {
+    width: 100%;
+  }
+  .half {
+    width: calc(100% / 2);
+  }
+  .one-third {
+    width: calc(100% / 3);
+  }
+  .one-fourth {
+    width: calc(100% / 4);
+  }
+  .one-fifth {
+    width: calc(100% / 5);
+  }
+  .two-thirds {
+    width: calc(100% / 3*2);
+  }
+  .three-fourth {
+    width: calc(100% / 4*3);
+  }
+  .four-fifth{
+    width: calc(100%/ 5*4);
+  }
+  .column {
+    float: left;
+  }
+}
