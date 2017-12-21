@@ -10,6 +10,8 @@ const del          = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const prompt       = require('gulp-prompt');
 const replace      = require('gulp-string-replace');
+const sassLint     = require('gulp-sass-lint');
+const plumber      = require('gulp-plumber');
 
 const root         = './src'
 const dist         = './dist'
@@ -30,12 +32,11 @@ const paths        = {
 
   css       : `${root}/css/**/*.css`,
   scss      : `${root}/scss/**/*.scss`,
-  libCss    : './node_modules/normalize.css/normalize.css',
   js        : `${root}/js/**/*.js`,
   libJs     : `${root}/js/lib/**/*.js`,
   html      : `${root}/**/*.html `,
   static    : [
-    `${root}/img/**/*`,
+    `${root}/images/**/*`,
     `${root}/fonts/**/*`,
     `${root}/footer.html`,
     `${root}/header.html`
@@ -77,6 +78,10 @@ gulp.task('cleanTmp', cb => del(
 
 gulp.task('sass', () => {
   return gulp.src(paths.scss)
+    .pipe(plumber())
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(gulp.dest(`${dist}/css`))
@@ -220,7 +225,6 @@ gulp.task('changeImgPath', () => {
 
 gulp.task('default', [
   'copyStatic',
-  'copyLibCss',
   'build',
   'watch',
   'serve'

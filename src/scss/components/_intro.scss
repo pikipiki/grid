@@ -1,0 +1,17 @@
+.video-container {
+  position: relative;
+  overflow: hidden;
+
+  .dark-vader {
+    position: absolute;
+    background: url('images/img-char.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    bottom: -8%;
+    background-size: contain;
+    s
+  }
+}
+

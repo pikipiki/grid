@@ -1,5 +1,5 @@
 {
-  "name": "oncovia",
+  "name": "samsung",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,10 +22,15 @@
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-inject-string": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-prompt": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4",
     "gulp-string-replace": "^0.4.0",
+    "postcss-bem": "^0.4.1",
+    "postcss-nested": "^3.0.0",
     "run-sequence": "^2.2.0"
   }
 }
