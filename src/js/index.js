@@ -1,1 +1,8 @@
-console.log(1)
+$(document).ready(function() {
+  $('.slider').slick({
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 1500,
+    adaptiveHeight: true
+    })
+})
