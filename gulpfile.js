@@ -12,6 +12,8 @@ const prompt       = require('gulp-prompt');
 const replace      = require('gulp-string-replace');
 const sassLint     = require('gulp-sass-lint');
 const plumber      = require('gulp-plumber');
+const sourcemaps   = require('gulp-sourcemaps');
+const uglify       = require('gulp-uglify');
 
 const root         = './src'
 const dist         = './dist'
@@ -19,12 +21,10 @@ const projectName  = 'apps'
 const paths        = {
   modules   : [
     'jquery-2.2.4.min.js',
-    'angular_1.2.1.js',
-    'angular-sanitize_1.2.1.js',
+    'slick.min.js'
   ],  
   myJsFiles : [
     'json.js',
-    'apps_path.js',
     '**/*.js'
   ],
   samsungOldAssetsPath: '//image.samsung.com/uk/apps_great/',
@@ -78,12 +78,14 @@ gulp.task('cleanTmp', cb => del(
 
 gulp.task('sass', () => {
   return gulp.src(paths.scss)
+    .pipe(sourcemaps.init())
     .pipe(plumber())
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${dist}/css`))
     .pipe(browserSync.stream())
 })
@@ -94,10 +96,13 @@ gulp.task('minJs', () => {
       `!${paths.libJs}`,
       paths.js
     ])
+    .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['env']
     }))
     .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${dist}/js`))
 })
 
