@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
 
-  .dark-vader {
+  .bg-dark-vader {
     position: absolute;
     background: url('images/img-char.png');
     background-repeat: no-repeat;
@@ -28,8 +28,4 @@
     top: 5vw;
     left: 5vw;
   }
-}
-
-@media screen and (max-width: $breakpoint) {
-
 }
