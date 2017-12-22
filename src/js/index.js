@@ -4,5 +4,9 @@ $(document).ready(function() {
     arrows: false,
     autoplaySpeed: 1500,
     adaptiveHeight: true
-    })
+  })
+  $('.icon-video').magnificPopup({
+    type: 'image',
+    closeOnContentClick: true
+  })
 })

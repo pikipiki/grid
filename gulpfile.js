@@ -20,7 +20,7 @@ const dist         = './dist'
 const projectName  = 'apps'
 const paths        = {
   modules   : [
-    'magnific-popup/dist/jquery.magnific-pop.js'
+    'magnific-popup/dist/jquery.magnific-popup.js'
   ],  
   myJsFiles : [
     // 'json.js',
@@ -63,7 +63,7 @@ const paths        = {
 const JsFullPaths = paths.myJsFiles.map(path => {
   return `${root}/js/${path}`
 });
-const ModulesFullPaths = paths.myJsFiles.map(path => {
+const ModulesFullPaths = paths.modules.map(path => {
   return `./node_modules/${path}`
 });
 
@@ -104,7 +104,7 @@ gulp.task('minJs', () => {
       presets: ['env']
     }))
     .pipe(concat('bundle.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${dist}/js`))
 })
@@ -188,6 +188,7 @@ gulp.task('copyLibCss', () => {
 gulp.task('modules', () => {
   gulp.src([
       `${root}/js/lib/jquery-2.2.4.min.js`,
+      ...ModulesFullPaths,
       paths.libJs
     ])
     .pipe(concat('vendor.js'))
