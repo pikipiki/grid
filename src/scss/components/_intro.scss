@@ -20,6 +20,7 @@
     color: white;
     font-size: calc(5vw + 0.3rem);
     transform: translateY(-100%);
+    font-family: 'SamsungONE', 'Helvetica', Arial;
   }
 
   .samsung-logo {
@@ -29,12 +30,18 @@
     left: 5vw;
   }
 
-  .slider-container {
+  .mini-icons {
     position: absolute;
+    display: block;
     width: 15%;
-    height: 33%;
-    bottom:0;
-    right:0;
+    height: auto;
+    bottom: 0;
+    right: 0;
+
+    img {
+      display: block;
+      right: 0;
+    }
 
     .item {
       height: auto;

@@ -160,7 +160,7 @@ gulp.task('serve', ['build'], () => {
   })
 })
 
-gulp.task('watch', () => {
+gulp.task('watch', ['serve'], () => {
   gulp.watch(
     [
       paths.scss, 
