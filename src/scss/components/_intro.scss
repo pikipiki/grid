@@ -16,7 +16,7 @@
   .video-title {
     position: absolute;
     top: 50%;
-    left: 28.5%;
+    left: 27%;
     color: white;
     font-size: calc(5vw + 0.3rem);
     transform: translateY(-100%);
@@ -30,10 +30,19 @@
     left: 5vw;
   }
 
-  .mini-icons {
+  .icon-video {
     position: absolute;
-    display: block;
-    // display: inline-block;
+    width: 15%;
+    bottom: 30%;
+    right: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .slider {
+    position: absolute;
     width: 15%;
     height: auto;
     bottom: 0;
