@@ -33,14 +33,14 @@
   .mini-icons {
     position: absolute;
     display: block;
+    // display: inline-block;
     width: 15%;
     height: auto;
     bottom: 0;
     right: 0;
 
     img {
-      display: block;
-      right: 0;
+      width: 100%;
     }
 
     .item {
