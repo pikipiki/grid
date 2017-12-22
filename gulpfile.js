@@ -20,12 +20,11 @@ const dist         = './dist'
 const projectName  = 'apps'
 const paths        = {
   modules   : [
-    'jquery-2.2.4.min.js',
-    'slick.min.js'
+    'magnific-popup/dist/jquery.magnific-pop.js'
   ],  
   myJsFiles : [
-    'json.js',
-    '**/*.js'
+    // 'json.js',
+    // '**/*.js'
   ],
   samsungOldAssetsPath: '//image.samsung.com/uk/apps_great/',
   samsungNewAssetsPath: `//images.samsung.com/is/image/samsung/p5/fr/${projectName}/`,
@@ -33,7 +32,7 @@ const paths        = {
   css       : `${root}/css/**/*.css`,
   scss      : `${root}/scss/**/*.scss`,
   js        : `${root}/js/**/*.js`,
-  libJs     : `${root}/js/lib/**/*.js`,
+  libJs     : `${root}/js/lib/*.js`,
   html      : `${root}/**/*.html `,
   static    : [
     `${root}/images/**/*`,
@@ -63,7 +62,10 @@ const paths        = {
 }
 const JsFullPaths = paths.myJsFiles.map(path => {
   return `${root}/js/${path}`
-})
+});
+const ModulesFullPaths = paths.myJsFiles.map(path => {
+  return `./node_modules/${path}`
+});
 
 gulp.task('clean', cb => del(`${dist}/**/*`, cb));
 
@@ -184,9 +186,10 @@ gulp.task('copyLibCss', () => {
 })
 
 gulp.task('modules', () => {
-  gulp.src(paths.modules.map((path) => {
-    return `./src/js/lib/${path}`
-  }))
+  gulp.src([
+      `${root}/js/lib/jquery-2.2.4.min.js`,
+      paths.libJs
+    ])
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest(`${dist}/js`))
 })
