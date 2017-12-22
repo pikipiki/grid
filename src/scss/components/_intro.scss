@@ -1,63 +1,18 @@
-.video-container {
-  position: relative;
-  overflow: hidden;
+.grid-demo {
+  display: grid;
 
-  .bg-dark-vader {
-    position: absolute;
-    background: url('images/img-char.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    bottom: -8%;
-    background-size: contain;
-  }
+  &.demo-1 {
+    grid-template-columns: auto auto;
+    grid-row-gap: 2px;
+    
 
-  .video-title {
-    position: absolute;
-    top: 50%;
-    left: 27%;
-    color: white;
-    font-size: calc(5vw + 0.3rem);
-    transform: translateY(-100%);
-    font-family: 'SamsungONE', 'Helvetica', Arial;
-  }
-
-  .samsung-logo {
-    position: absolute;
-    max-width: 20%;
-    top: 5vw;
-    left: 5vw;
-  }
-
-  .icon-video-container {
-    position: absolute;
-    width: 15%;
-    bottom: 36%;
-    right: 3;
-
-    img {
-      width: 100%;
+    @media screen and (min-width: 647px) {
+      grid-template-columns: auto auto auto;
     }
   }
 
-  .slider {
-    position: absolute;
-    width: 15%;
-    height: auto;
-    bottom: 4%;
-    right: 8%;
-
-    img {
-      width: 100%;
-    }
-
-    .item {
-      height: auto;
-    }
-
+  .child-title {
+    border: 1px solid black;
+    text-align: center;
   }
-
 }
-
-
