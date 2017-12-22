@@ -29,10 +29,16 @@
     left: 5vw;
   }
 
+  .slider-container {
+    
+    .slider {
+      position: absolute;
+      width: 182px;
+      height: 198px;
+      bottom:0;
+      right:0;
+    }
+  }
 }
 
-.slider {
-  width: 182px;
-  height: 198px;
 
-}
