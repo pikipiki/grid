@@ -1,63 +1,47 @@
-.video-container {
-  position: relative;
-  overflow: hidden;
+.intro {
+  background-color: black;
 
-  .bg-dark-vader {
-    position: absolute;
-    background: url('images/img-char.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
+  video { 
+    position: fixed;
+    top: 0;
     width: 100%;
-    bottom: -8%;
-    background-size: contain;
+    z-index: -1;
   }
 
-  .video-title {
-    position: absolute;
-    top: 50%;
-    left: 27%;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+    
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 10px 3fr 10px 1fr;
+    -ms-grid-rows:  auto;
+  }
+  
+  .box {
+    background-color: #444;
+    padding:  20px;
+    text-align: center;
     color: white;
-    font-size: calc(5vw + 0.3rem);
-    transform: translateY(-100%);
-    font-family: 'SamsungONE', 'Helvetica', Arial;
+    font-size: 150%;
   }
 
-  .samsung-logo {
-    position: absolute;
-    max-width: 20%;
-    top: 5vw;
-    left: 5vw;
+  .logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
   }
 
-  .icon-video-container {
-    position: absolute;
-    width: 15%;
-    bottom: 36%;
-    right: 3;
-
-    img {
-      width: 100%;
-    }
+  .title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
   }
 
   .slider {
-    position: absolute;
-    width: 15%;
-    height: auto;
-    bottom: 4%;
-    right: 8%;
-
-    img {
-      width: 100%;
-    }
-
-    .item {
-      height: auto;
-    }
-
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 1;
   }
 
-}
-
-
+} 
