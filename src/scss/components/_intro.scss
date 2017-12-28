@@ -39,6 +39,11 @@
     align-self: center;
     justify-self: end;
     max-width: 15%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .slider {
