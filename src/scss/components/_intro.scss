@@ -1,6 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  overflow: hidden;
 
   video {
     width: 100%;
@@ -68,7 +69,8 @@
     justify-self: center;
     align-self: end;
     z-index: -1;
-    /* margin-bottom: -1vw; */
+    margin-bottom: -5vw;
+    width: 59%;
   }
 
 }
