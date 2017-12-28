@@ -49,12 +49,13 @@
     grid-column: 1;
     grid-row: 1;
     max-width: 60%;
-    height: auto;
     margin-top: 4vw;
     margin-left: 4vw;
 
     -ms-grid-row: 1;
     -ms-grid-column: 1;
+    height: auto!important;
+    width: 100%;
   }
 
   a {

@@ -230,6 +230,7 @@ gulp.task('changeImgPath', () => {
     .pipe(replace(/\.png/g, '.png?$ORIGIN_PNG$'))
     .pipe(replace(/\.jpg/g, '.jpg?$ORIGIN_JPG$'))
     .pipe(replace(/\.gif/g, '.gif?$ORIGIN_GIF$'))
+    .pipe(replace(/\?\$ORIGIN\_PNG\$\?\$ORIGIN\_PNG\$/g, '?$ORIGIN_PNG$'))
     .pipe(gulp.dest('dist'))
 })
 
