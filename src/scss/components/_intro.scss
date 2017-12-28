@@ -29,18 +29,27 @@
   .logo {
     grid-column: 1;
     grid-row: 1;
+    max-width: 60%;
+    height: auto;
   }
 
-  img {
-    max-width: 100%;
+  a {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: end;
+    max-width: 15%;
   }
 
   .slider {
-    grid-column: 3;
+    grid-column: 1;
     grid-row: 1;
     min-height: 0;
     min-width: 0;
     align-self: end;
+    justify-self: end;
+    max-width: 15%;
+    margin-right: 5%;
 
     img {
       height: auto;
