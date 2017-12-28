@@ -41,8 +41,8 @@
 
     -ms-grid-row: 1;
     -ms-grid-column: 2;
-    /* -ms-grid-row-align: end; */
-    /* -ms-grid-column-align: center;  */
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: center; 
   }
 
   .logo {
@@ -72,9 +72,7 @@
     display: block;
 
     img {
-      @supports (display: grid) {
-        width: 100%;
-      }
+      width: 100%;
       height: auto;
 
     }
